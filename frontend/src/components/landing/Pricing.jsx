@@ -1,6 +1,4 @@
 import { Check, Star } from "lucide-react";
-import { FaTelegramPlane } from "react-icons/fa";
-import { TELEGRAM_URL } from "@/lib/site";
 
 const perks = [
   "Live TV + Premium Sports",
@@ -58,13 +56,11 @@ const Pricing = () => {
           </p>
 
           <a
-            href={TELEGRAM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#order"
             data-testid="pricing-quarterly-cta"
             className="neon-btn mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-omg-green px-6 py-3.5 font-display font-bold text-omg-void"
           >
-            <FaTelegramPlane size={17} /> Get Started
+            Get Started
           </a>
 
           <ul className="mt-8 space-y-3">
@@ -96,13 +92,11 @@ const Pricing = () => {
           </p>
 
           <a
-            href={TELEGRAM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#order"
             data-testid="pricing-annual-cta"
             className="mt-6 flex w-full items-center justify-center gap-2 rounded-full border border-omg-green/50 bg-white/5 px-6 py-3.5 font-display font-bold text-omg-green transition-all hover:bg-omg-green/10"
           >
-            <FaTelegramPlane size={17} /> Get Started
+            Get Started
           </a>
 
           <ul className="mt-8 space-y-3">

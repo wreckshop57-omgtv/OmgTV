@@ -19,13 +19,11 @@ const FloatingCTA = () => {
       {/* Sticky mobile Get Started bar */}
       <div className="fixed bottom-0 left-0 z-40 w-full px-4 pb-3 md:hidden">
         <a
-          href={TELEGRAM_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#order"
           data-testid="sticky-mobile-get-started"
           className="neon-btn flex w-full items-center justify-center gap-2 rounded-full bg-omg-green py-3.5 font-display text-base font-bold text-omg-void"
         >
-          <FaTelegramPlane size={18} /> Get Started
+          Get Started
         </a>
       </div>
     </>

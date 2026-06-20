@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { LOGO_SRC, TELEGRAM_URL, scrollToId } from "@/lib/site";
+import { LOGO_SRC, scrollToId } from "@/lib/site";
 
 const links = [
   { label: "Features", id: "features" },
@@ -60,9 +60,7 @@ const Navbar = () => {
 
         <div className="hidden md:block">
           <a
-            href={TELEGRAM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#order"
             data-testid="nav-get-started"
             className="neon-btn rounded-full bg-omg-green px-6 py-2.5 font-display text-sm font-bold text-omg-void"
           >
@@ -97,9 +95,8 @@ const Navbar = () => {
               </button>
             ))}
             <a
-              href={TELEGRAM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#order"
+              onClick={() => setOpen(false)}
               data-testid="mobile-nav-get-started"
               className="mt-2 rounded-full bg-omg-green px-6 py-3 text-center font-display font-bold text-omg-void"
             >

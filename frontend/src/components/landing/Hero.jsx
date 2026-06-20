@@ -1,7 +1,6 @@
-import { FaTelegramPlane } from "react-icons/fa";
 import { ChevronRight, PlayCircle } from "lucide-react";
 import MatrixRain from "@/components/MatrixRain";
-import { LOGO_SRC, TELEGRAM_URL, scrollToId } from "@/lib/site";
+import { LOGO_SRC, scrollToId } from "@/lib/site";
 
 const Hero = () => {
   return (
@@ -59,13 +58,10 @@ const Hero = () => {
           style={{ animationDelay: "0.4s" }}
         >
           <a
-            href={TELEGRAM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#order"
             data-testid="hero-get-started"
             className="neon-btn flex w-full items-center justify-center gap-2 rounded-full bg-omg-green px-8 py-4 font-display text-base font-bold text-omg-void sm:w-auto"
           >
-            <FaTelegramPlane size={18} />
             Get Started
             <ChevronRight size={18} />
           </a>
