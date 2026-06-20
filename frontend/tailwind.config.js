@@ -7,6 +7,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        display: ['"Azeret Mono"', 'monospace'],
+        body: ['"Outfit"', 'sans-serif'],
+      },
+      colors: {
+        omg: {
+          green: '#00FF66',
+          void: '#040404',
+        },
+      },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',

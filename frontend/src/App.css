@@ -1,34 +1,92 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+.font-mono-display {
+    font-family: "Azeret Mono", monospace;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
+.glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-strong {
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.neon-text {
+    text-shadow: 0 0 12px rgba(0, 255, 102, 0.55), 0 0 40px rgba(0, 255, 102, 0.25);
+}
+
+.neon-border {
+    border: 1px solid rgba(0, 255, 102, 0.6);
+    box-shadow: 0 0 24px rgba(0, 255, 102, 0.18),
+        inset 0 0 24px rgba(0, 255, 102, 0.06);
+}
+
+.neon-btn {
+    box-shadow: 0 0 18px rgba(0, 255, 102, 0.45);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+.neon-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+    box-shadow: 0 0 34px rgba(0, 255, 102, 0.7);
+}
+
+.card-hover {
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+.card-hover:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0, 255, 102, 0.5);
+    box-shadow: 0 12px 40px rgba(0, 255, 102, 0.12);
+}
+
+/* Grid background overlay */
+.grid-overlay {
+    background-image: linear-gradient(rgba(0, 255, 102, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 102, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+}
+
+@keyframes float-pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 102, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 0 14px rgba(0, 255, 102, 0);
     }
 }
-
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.float-pulse {
+    animation: float-pulse 2.2s infinite;
 }
 
-.App-link {
-    color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes fade-up {
     from {
-        transform: rotate(0deg);
+        opacity: 0;
+        transform: translateY(24px);
     }
     to {
-        transform: rotate(360deg);
+        opacity: 1;
+        transform: translateY(0);
     }
+}
+.fade-up {
+    animation: fade-up 0.7s ease both;
+}
+
+@keyframes logo-glow {
+    0%, 100% {
+        filter: drop-shadow(0 0 18px rgba(0, 255, 102, 0.35));
+    }
+    50% {
+        filter: drop-shadow(0 0 42px rgba(0, 255, 102, 0.6));
+    }
+}
+.logo-glow {
+    animation: logo-glow 4s ease-in-out infinite;
 }
