@@ -90,3 +90,88 @@
 .logo-glow {
     animation: logo-glow 4s ease-in-out infinite;
 }
+
+/* ===== Intro Splash Animations ===== */
+@keyframes intro-image-in {
+    0% {
+        transform: scale(1.35);
+        opacity: 0;
+        filter: blur(14px) brightness(2.4);
+    }
+    18% {
+        opacity: 1;
+        filter: blur(0) brightness(1.6);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        filter: blur(0) brightness(1);
+    }
+}
+.intro-image-in {
+    animation: intro-image-in 3.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes intro-shake {
+    0%, 100% { transform: translate(0, 0); }
+    10% { transform: translate(-8px, 6px); }
+    20% { transform: translate(7px, -7px); }
+    30% { transform: translate(-6px, -5px); }
+    40% { transform: translate(6px, 5px); }
+    50% { transform: translate(-4px, 4px); }
+    60% { transform: translate(4px, -3px); }
+    70% { transform: translate(-2px, 2px); }
+    80% { transform: translate(2px, 1px); }
+    90% { transform: translate(-1px, 0); }
+}
+.intro-shake {
+    animation: intro-shake 0.9s ease-out both;
+}
+
+@keyframes intro-flash {
+    0% { opacity: 0; }
+    6% { opacity: 0.95; }
+    24% { opacity: 0; }
+    100% { opacity: 0; }
+}
+.intro-flash {
+    animation: intro-flash 1.6s ease-out both;
+}
+
+@keyframes intro-shockwave {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0.9;
+        border-width: 10px;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+        border-width: 1px;
+    }
+}
+.intro-shockwave {
+    animation: intro-shockwave 1.5s cubic-bezier(0.2, 0.8, 0.3, 1) 0.2s both;
+}
+
+@keyframes ember-fly {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--ex), var(--ey)) scale(0.2);
+        opacity: 0;
+    }
+}
+.ember {
+    animation: ember-fly var(--edur) ease-out var(--edelay) both;
+}
+
+@keyframes intro-fade-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+.intro-fade-out {
+    animation: intro-fade-out 0.7s ease forwards;
+}
