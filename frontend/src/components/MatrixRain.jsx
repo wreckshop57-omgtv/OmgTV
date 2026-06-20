@@ -1,5 +1,22 @@
 import { useEffect, useRef } from "react";
 
+const SERVICES = [
+  "NETFLIX",
+  "PRIME",
+  "HULU",
+  "DISNEY+",
+  "HBO MAX",
+  "ESPN",
+  "PEACOCK",
+  "APPLE TV",
+  "PARAMOUNT",
+  "SPORTS",
+  "PPV",
+  "LIVE TV",
+  "MAX",
+  "STARZ",
+];
+
 const MatrixRain = () => {
   const canvasRef = useRef(null);
 
@@ -9,48 +26,71 @@ const MatrixRain = () => {
     const ctx = canvas.getContext("2d");
 
     let animationId;
-    let drops = [];
-    const fontSize = 16;
-    const chars =
-      "アカサタナハマヤラワ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ010110".split("");
+    let columns = [];
+    const fontSize = 18;
+    const stepInterval = 90; // ms between row advances (slower rain)
+    let lastStep = 0;
+
+    const randWord = () => SERVICES[Math.floor(Math.random() * SERVICES.length)];
 
     const setup = () => {
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
-      const columns = Math.floor(canvas.width / fontSize);
-      drops = Array.from({ length: columns }, () =>
-        Math.floor((Math.random() * canvas.height) / fontSize)
-      );
+      const colCount = Math.floor(canvas.width / fontSize);
+      columns = Array.from({ length: colCount }, () => ({
+        word: randWord(),
+        head: Math.floor((Math.random() * canvas.height) / fontSize) -
+          Math.floor(Math.random() * 12),
+      }));
     };
 
-    const draw = () => {
-      ctx.fillStyle = "rgba(4, 4, 4, 0.08)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.font = `${fontSize}px "Azeret Mono", monospace`;
-
-      for (let i = 0; i < drops.length; i++) {
-        const text = chars[Math.floor(Math.random() * chars.length)];
-        const x = i * fontSize;
-        const y = drops[i] * fontSize;
-
-        // Bright leading character
-        if (Math.random() > 0.975) {
-          ctx.fillStyle = "#ccffdd";
-        } else {
-          ctx.fillStyle = "#00ff66";
-        }
-        ctx.fillText(text, x, y);
-
-        if (y > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
-        }
-        drops[i]++;
-      }
+    const draw = (time) => {
       animationId = requestAnimationFrame(draw);
+      if (time - lastStep < stepInterval) return;
+      lastStep = time;
+
+      // Fade previous frame
+      ctx.fillStyle = "rgba(4, 4, 4, 0.16)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.font = `bold ${fontSize}px "Azeret Mono", monospace`;
+      ctx.textAlign = "center";
+
+      const totalRows = Math.ceil(canvas.height / fontSize);
+
+      for (let i = 0; i < columns.length; i++) {
+        const col = columns[i];
+        const x = i * fontSize + fontSize / 2;
+        const letters = col.word;
+
+        for (let j = 0; j < letters.length; j++) {
+          const row = col.head - (letters.length - 1) + j;
+          if (row < 0) continue;
+          const y = row * fontSize;
+          const isHead = j === letters.length - 1;
+          if (isHead) {
+            ctx.fillStyle = "#e9ffef";
+            ctx.shadowColor = "#00ff66";
+            ctx.shadowBlur = 8;
+          } else {
+            const fade = 0.35 + (j / letters.length) * 0.55;
+            ctx.fillStyle = `rgba(0, 255, 102, ${fade})`;
+            ctx.shadowBlur = 0;
+          }
+          ctx.fillText(letters[j], x, y);
+        }
+        ctx.shadowBlur = 0;
+
+        col.head++;
+        // Reset once the whole word has dropped below the screen
+        if (col.head - letters.length > totalRows && Math.random() > 0.5) {
+          col.head = -Math.floor(Math.random() * 8);
+          col.word = randWord();
+        }
+      }
     };
 
     setup();
-    draw();
+    animationId = requestAnimationFrame(draw);
 
     const handleResize = () => setup();
     window.addEventListener("resize", handleResize);
