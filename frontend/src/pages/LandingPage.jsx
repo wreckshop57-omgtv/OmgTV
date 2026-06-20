@@ -22,7 +22,9 @@ const LandingPage = () => {
         <FAQ />
         <Contact />
       </main>
-      <Footer />
+      <div className="pb-24 md:pb-0">
+        <Footer />
+      </div>
       <FloatingCTA />
     </div>
   );

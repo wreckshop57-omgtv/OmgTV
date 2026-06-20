@@ -11,7 +11,7 @@ const FloatingCTA = () => {
         rel="noopener noreferrer"
         data-testid="floating-telegram-button"
         aria-label="Join on Telegram"
-        className="float-pulse fixed bottom-20 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-omg-green text-omg-void shadow-[0_0_24px_rgba(0,255,102,0.55)] transition-transform hover:scale-110 sm:bottom-6"
+        className="float-pulse fixed bottom-36 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-omg-green text-omg-void shadow-[0_0_24px_rgba(0,255,102,0.55)] transition-transform hover:scale-110 sm:bottom-6"
       >
         <FaTelegramPlane size={26} />
       </a>
