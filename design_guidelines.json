@@ -1,0 +1,117 @@
+{
+  "theme_and_archetype": {
+    "domain": "Streaming / Media",
+    "theme": "Dark Theme",
+    "archetype": "Archetype 7 (Electric & Neon)",
+    "description": "A premium, cutting-edge, matrix-inspired dark UI. Deep void blacks mixed with frosted glass surfaces and sharp, deliberate neon green accents. It must not feel cheap or gamery, but rather like an exclusive, high-tech command center."
+  },
+  "typography": {
+    "heading_font": "Azeret Mono",
+    "body_font": "Outfit",
+    "rules": {
+      "headings": "Tight letter spacing (tracking-tight), never default to standard sans like Inter. Use Azeret Mono for a technical, matrix vibe.",
+      "body": "Clean, highly readable geometric sans. Outfit works perfectly.",
+      "hierarchy": "H1 up to text-5xl/6xl. Do not exceed. Strong contrast in weight."
+    }
+  },
+  "colors": {
+    "background": "#040404",
+    "surface": "rgba(255, 255, 255, 0.03)",
+    "surface_glass": "rgba(0, 0, 0, 0.4)",
+    "primary": "#00FF66",
+    "text_primary": "#FAFAFA",
+    "text_secondary": "#A1A1AA",
+    "border": "rgba(255, 255, 255, 0.1)",
+    "neon_glow": "rgba(0, 255, 102, 0.5)"
+  },
+  "layout_and_spacing": {
+    "container": "Max-width 7xl (1280px). Generous padding (p-8 to p-12 on desktop).",
+    "grid": "Bento-style 'Tetris' grid for the Features section. Asymmetry creates tension and interest.",
+    "spacing_scale": "Use 2-3x more spacing than typical designs. Massive gaps between sections (py-24 or py-32)."
+  },
+  "components": {
+    "navigation": {
+      "style": "Crystal Glassmorphism (bg-black/60 backdrop-blur-xl border-b border-white/10). Sticky top, z-50.",
+      "elements": "Logo left, Links center, 'Get Started' button right."
+    },
+    "hero": {
+      "background": "Custom HTML5 Canvas or tsParticles Matrix digital rain effect with subtle neon green highlights. Overlay with bg-black/60 to ensure text readability.",
+      "layout": "Centered, high impact. Large logo, bold heading (text-5xl md:text-6xl tracking-tighter).",
+      "ctas": "Primary: Solid #00FF66 background, black text. Secondary: Transparent with #00FF66 border and text. Hover effects must increase brightness."
+    },
+    "features": {
+      "style": "Glassmorphism cards. bg-white/5 backdrop-blur-md border border-white/10. On hover, the border transitions to border-[#00FF66]/50 with a subtle neon drop-shadow.",
+      "layout": "8 cards in an asymmetrical bento grid. Mix col-span-1 and col-span-2 items."
+    },
+    "pricing": {
+      "style": "Two prominent cards. Quarterly card uses the 'Tracing Beam' or glowing border effect to stand out as 'Most Popular'.",
+      "quarterly_card": "Border #00FF66, subtle inset neon glow, 'Most Popular' badge at the top.",
+      "annual_card": "Standard glassmorphism style, muted to drive focus to Quarterly."
+    },
+    "testimonials": {
+      "style": "Dark glass cards, subtle typography. Avatars aligned left.",
+      "layout": "Grid of 3, gap-8."
+    },
+    "faq": {
+      "style": "Shadcn Accordion component, customized to remove standard borders and use a dark, tech-focused look with neon green active states."
+    },
+    "contact": {
+      "style": "Massive CTA area. Headline: 'Ready to Start Watching?'. Primary CTA is a Telegram button with the Telegram icon.",
+      "floating_elements": "Fixed bottom-right Telegram bubble. Fixed bottom-center mobile 'Get Started' button."
+    }
+  },
+  "media": {
+    "logo": {
+      "instruction": "Use the uploaded OMGTV logo provided by the user. If unavailable, use a clean text logo with the primary font until asset is injected."
+    },
+    "testimonials": [
+      {
+        "url": "https://images.unsplash.com/photo-1610659128929-fa69328744e2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBwb3J0cmFpdCUyMGRhcmslMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc4MTkyMTc3OXww&ixlib=rb-4.1.0&q=85",
+        "description": "Testimonial Avatar 1",
+        "category": "testimonial_avatar"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1614010966237-74489a16848b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwzfHxwZXJzb24lMjBwb3J0cmFpdCUyMGRhcmslMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc4MTkyMTc3OXww&ixlib=rb-4.1.0&q=85",
+        "description": "Testimonial Avatar 2",
+        "category": "testimonial_avatar"
+      },
+      {
+        "url": "https://images.pexels.com/photos/1327482/pexels-photo-1327482.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Testimonial Avatar 3",
+        "category": "testimonial_avatar"
+      }
+    ],
+    "contextual_images": [
+      {
+        "url": "https://images.unsplash.com/photo-1577979749830-f1d742b96791?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDR8MHwxfHNlYXJjaHwyfHxob21lJTIwdGhlYXRlciUyMHR2JTIwZGFya3xlbnwwfHx8fDE3ODE5MjE3Nzl8MA&ixlib=rb-4.1.0&q=85",
+        "description": "TV Screen in dark room",
+        "category": "feature_background_abstract"
+      }
+    ],
+    "icons": {
+      "library": "lucide-react",
+      "instruction": "Use Lucide React for standard UI icons. Use react-icons/fa for the Telegram icon. yarn add react-icons."
+    }
+  },
+  "animations": {
+    "hero_matrix": "MUST implement a custom Canvas or tsParticles effect for the falling green matrix code.",
+    "hover_states": "All buttons must transition transform and brightness. Feature cards lift slightly (-translate-y-1) and gain a neon border glow.",
+    "scroll": "Use Lenis or framer-motion for smooth scrolling and staggered section fade-ins."
+  },
+  "accessibility_and_testing": {
+    "contrast": "Ensure text over the matrix background has sufficient contrast (use bg-black/60 overlay minimum).",
+    "test_ids": "MUST add data-testid to all interactive elements (e.g., data-testid='hero-cta-button', data-testid='faq-accordion-item-1')."
+  },
+  "instructions_to_main_agent": [
+    "You are building a premium, dark-mode landing page for OMGTV.",
+    "Follow the Archetype 7 (Electric & Neon) theme. Do not invent unrelated colors.",
+    "Use standard HTML/Tailwind for main layout structures. Avoid Shadcn for standard cards to maintain creative freedom.",
+    "Use Shadcn ONLY for complex interactive logic like the FAQ Accordion.",
+    "DO NOT use generic fonts like Inter or Roboto for headings. Apply Azeret Mono for headings and Outfit for body.",
+    "Implement the matrix background in the Hero section via Canvas or a library.",
+    "Ensure the Quarterly pricing card visually dominates the Annual one.",
+    "Include the floating Telegram button and mobile sticky CTA.",
+    "Use JS files, not TSX.",
+    "Include data-testid attributes on every button, link, and interactive element to ensure testing passes."
+  ]
+}
