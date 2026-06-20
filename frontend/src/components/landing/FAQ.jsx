@@ -8,7 +8,7 @@ import {
 const faqs = [
   {
     q: "What devices are supported?",
-    a: "OMGTV works seamlessly across Smart TVs, phones, tablets, laptops, and streaming boxes. Watch on any device, switch anytime.",
+    a: "Firesticks and OnnTV 4K — you'll have a fully programmed device shipped to you ready to go!",
   },
   {
     q: "Is PPV available?",

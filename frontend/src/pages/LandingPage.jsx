@@ -5,6 +5,7 @@ import Pricing from "@/components/landing/Pricing";
 import WhyChoose from "@/components/landing/WhyChoose";
 import Testimonials from "@/components/landing/Testimonials";
 import FAQ from "@/components/landing/FAQ";
+import BuyNow from "@/components/landing/BuyNow";
 import Contact from "@/components/landing/Contact";
 import Footer from "@/components/landing/Footer";
 import FloatingCTA from "@/components/landing/FloatingCTA";
@@ -20,6 +21,7 @@ const LandingPage = () => {
         <WhyChoose />
         <Testimonials />
         <FAQ />
+        <BuyNow />
         <Contact />
       </main>
       <div className="pb-24 md:pb-0">

@@ -7,6 +7,7 @@ const links = [
   { label: "Pricing", id: "pricing" },
   { label: "Why OMGTV", id: "why" },
   { label: "FAQ", id: "faq" },
+  { label: "Buy Now", id: "order" },
 ];
 
 const Navbar = () => {
@@ -46,7 +47,11 @@ const Navbar = () => {
               key={l.id}
               data-testid={`nav-link-${l.id}`}
               onClick={() => go(l.id)}
-              className="font-body text-sm text-zinc-300 transition-colors hover:text-omg-green"
+              className={`font-body text-sm transition-colors hover:text-omg-green ${
+                l.id === "order"
+                  ? "font-semibold text-omg-green neon-text"
+                  : "text-zinc-300"
+              }`}
             >
               {l.label}
             </button>

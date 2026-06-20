@@ -4,9 +4,11 @@ import LandingPage from "@/pages/LandingPage";
 import IntroSplash from "@/components/IntroSplash";
 
 function App() {
-  const [showIntro, setShowIntro] = useState(
-    () => !sessionStorage.getItem("omgtv_intro_seen")
-  );
+  const [showIntro, setShowIntro] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("nointro")) return false;
+    return !sessionStorage.getItem("omgtv_intro_seen");
+  });
 
   const finishIntro = () => {
     sessionStorage.setItem("omgtv_intro_seen", "1");
