@@ -175,3 +175,42 @@
 .intro-fade-out {
     animation: intro-fade-out 0.7s ease forwards;
 }
+
+/* ===== Logo CRT TV power on/off effect (loops every 2s) ===== */
+@keyframes tv-power {
+    0%, 76% {
+        transform: scaleY(1) scaleX(1);
+        opacity: 1;
+        filter: drop-shadow(0 0 22px rgba(0, 255, 102, 0.45)) brightness(1);
+    }
+    82% {
+        transform: scaleY(0.014) scaleX(1);
+        opacity: 1;
+        filter: drop-shadow(0 0 34px rgba(220, 255, 235, 0.95)) brightness(2.4);
+    }
+    86% {
+        transform: scaleY(0.014) scaleX(0.02);
+        opacity: 0.95;
+        filter: brightness(2.8);
+    }
+    88%, 91% {
+        transform: scale(0);
+        opacity: 0;
+        filter: brightness(0);
+    }
+    95% {
+        transform: scaleY(0.014) scaleX(1);
+        opacity: 1;
+        filter: drop-shadow(0 0 34px rgba(220, 255, 235, 0.95)) brightness(2.4);
+    }
+    100% {
+        transform: scaleY(1) scaleX(1);
+        opacity: 1;
+        filter: drop-shadow(0 0 22px rgba(0, 255, 102, 0.45)) brightness(1);
+    }
+}
+.tv-power {
+    transform-origin: center center;
+    animation: tv-power 2s ease-in-out infinite;
+    will-change: transform, filter, opacity;
+}

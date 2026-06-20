@@ -143,12 +143,13 @@ const BuyNow = () => {
                   type="radio"
                   name="field-a5ba3cf448a2a4a"
                   id="field-a5ba3cf448a2a4a_1"
-                  value="1 Year - $480"
+                  value="1 Year - $480 *Save $40 per Year*"
                   data-testid="order-term-annual"
                   className="h-4 w-4 accent-omg-green"
                 />
                 <span className="font-body text-sm text-zinc-200">
-                  1 Year — <span className="font-semibold text-white">$480</span>
+                  1 Year — <span className="font-semibold text-white">$480</span>{" "}
+                  <span className="text-xs text-omg-green">Save $40/yr</span>
                 </span>
               </label>
             </div>
@@ -171,6 +172,10 @@ const BuyNow = () => {
               data-testid="order-devices"
               className="w-full appearance-none rounded-xl border border-white/10 bg-black/40 px-4 py-3 font-body text-sm text-white outline-none transition-colors focus:border-omg-green/60"
             >
+              <option value="**Choose**">Choose…</option>
+              <option value='0 - Instructions Only! "I Have my own device."'>
+                0 — Instructions Only! "I have my own device."
+              </option>
               <option value="1 - One time fee: $50">1 — One time fee: $50</option>
               <option value="2 - One time fee: $80">2 — One time fee: $80</option>
             </select>

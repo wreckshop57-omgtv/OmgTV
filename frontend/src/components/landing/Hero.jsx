@@ -21,7 +21,7 @@ const Hero = () => {
             src={LOGO_SRC}
             alt="OMGTV"
             data-testid="hero-logo"
-            className="logo-glow h-28 w-auto sm:h-36 lg:h-44"
+            className="tv-power h-36 w-auto sm:h-44 lg:h-56"
           />
         </div>
 
