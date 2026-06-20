@@ -5,8 +5,9 @@ import {
   Film,
   Clapperboard,
   Globe2,
-  MonitorSmartphone,
+  Unlock,
   Zap,
+  Server,
 } from "lucide-react";
 
 const features = [
@@ -47,9 +48,15 @@ const features = [
     span: "lg:col-span-2",
   },
   {
-    icon: MonitorSmartphone,
-    title: "Multi-Device Support",
-    desc: "Watch on TV, phone, tablet and laptop seamlessly.",
+    icon: Unlock,
+    title: "No IP Lock Service",
+    desc: "Stream freely from any network — no IP restrictions or lockouts.",
+    span: "",
+  },
+  {
+    icon: Server,
+    title: "Multiple Servers",
+    desc: "Redundant servers keep you streaming with minimal downtime.",
     span: "",
   },
   {
