@@ -2,8 +2,20 @@ import { useState } from "react";
 import "@/App.css";
 import LandingPage from "@/pages/LandingPage";
 import IntroSplash from "@/components/IntroSplash";
+import Privacy from "@/pages/Privacy";
+import Terms from "@/pages/Terms";
 
 function App() {
+  const path = window.location.pathname;
+
+  if (path === "/privacy") {
+    return <Privacy />;
+  }
+
+  if (path === "/terms") {
+    return <Terms />;
+  }
+
   const [showIntro, setShowIntro] = useState(() => {
     const params = new URLSearchParams(window.location.search);
     if (params.has("nointro")) return false;
