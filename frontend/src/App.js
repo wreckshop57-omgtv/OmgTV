@@ -6,16 +6,6 @@ import Privacy from "@/pages/Privacy";
 import Terms from "@/pages/Terms";
 
 function App() {
-  const path = window.location.pathname;
-
-  if (path === "/privacy") {
-    return <Privacy />;
-  }
-
-  if (path === "/terms") {
-    return <Terms />;
-  }
-
   const [showIntro, setShowIntro] = useState(() => {
     const params = new URLSearchParams(window.location.search);
     if (params.has("nointro")) return false;
@@ -26,6 +16,16 @@ function App() {
     sessionStorage.setItem("omgtv_intro_seen", "1");
     setShowIntro(false);
   };
+
+  const path = window.location.pathname;
+
+  if (path === "/privacy") {
+    return <Privacy />;
+  }
+
+  if (path === "/terms") {
+    return <Terms />;
+  }
 
   return (
     <div className="App bg-omg-void min-h-screen">
