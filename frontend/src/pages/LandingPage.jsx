@@ -6,6 +6,7 @@ import WhyChoose from "@/components/landing/WhyChoose";
 import Testimonials from "@/components/landing/Testimonials";
 import FAQ from "@/components/landing/FAQ";
 import BuyNow from "@/components/landing/BuyNow";
+import SmsOptIn from "@/components/landing/SmsOptIn";
 import Contact from "@/components/landing/Contact";
 import Footer from "@/components/landing/Footer";
 import FloatingCTA from "@/components/landing/FloatingCTA";
@@ -14,6 +15,7 @@ const LandingPage = () => {
   return (
     <div data-testid="landing-page" className="relative bg-omg-void">
       <Navbar />
+
       <main>
         <Hero />
         <Features />
@@ -22,11 +24,14 @@ const LandingPage = () => {
         <Testimonials />
         <FAQ />
         <BuyNow />
+        <SmsOptIn />
         <Contact />
       </main>
+
       <div className="pb-24 md:pb-0">
         <Footer />
       </div>
+
       <FloatingCTA />
     </div>
   );
