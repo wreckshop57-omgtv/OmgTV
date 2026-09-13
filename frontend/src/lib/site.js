@@ -1,4 +1,4 @@
-export const TELEGRAM_URL = "https://t.me/omgtv";
+export const TELEGRAM_URL = "https://t.me/omgtvsticks";
 export const LOGO_SRC = "/omgtv-logo.png";
 
 export const scrollToId = (id) => {
