@@ -15,7 +15,7 @@ const SmsOptIn = () => {
 
         <p className="mx-auto mt-5 max-w-2xl font-body text-base leading-7 text-zinc-300">
           Text <strong className="text-white">JOIN</strong> to{" "}
-          <strong className="text-white">[YOUR TWILIO NUMBER]</strong> to receive
+          <strong className="text-white">281-912-3460</strong> to receive
           service information, account updates, support messages, web design
           information, and occasional promotional offers from AG Media Services.
         </p>
